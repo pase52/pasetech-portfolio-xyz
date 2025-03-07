@@ -1,11 +1,11 @@
-import { createEnv } from "@t3-oss/env-nextjs"
-import { z } from "zod"
+import { createEnv } from '@t3-oss/env-nextjs'
+import { z } from 'zod'
 
 export const env = createEnv({
   server: {
     NEXTAUTH_URL: z.string().url(),
     NEXTAUTH_SECRET: z.string().min(1),
-    NODE_ENV: z.string().refine((value) => ["development", "production"].includes(value), {
+    NODE_ENV: z.string().refine((value) => ['development', 'production'].includes(value), {
       message: "NODE_ENV must be 'development' or 'production'",
     }),
     DATABASE_URL: z.string().url().optional(),
@@ -60,11 +60,13 @@ export const env = createEnv({
     GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
     GITHUB_API_URL: process.env.GITHUB_API_URL,
 
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_APP_URL:
+      process.env.NEXT_PUBLIC_APP_URL ||
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined),
     NEXT_UMAMI_ID: process.env.NEXT_UMAMI_ID,
     NEXT_PUBLIC_GISCUS_REPO: process.env.NEXT_PUBLIC_GISCUS_REPO,
     NEXT_PUBLIC_GISCUS_REPOSITORY_ID: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
     NEXT_PUBLIC_GISCUS_CATEGORY: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
     NEXT_PUBLIC_GISCUS_CATEGORY_ID: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
   }, // Add a comma here
-});
+})
