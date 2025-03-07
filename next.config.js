@@ -59,8 +59,7 @@ const securityHeaders = [
  **/
 module.exports = () => {
   // I desactivated withContentlayer because it's not building the app with it :(
-  // const plugins = [withContentlayer, withBundleAnalyzer]
-  const plugins = [withBundleAnalyzer]
+  const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
     reactStrictMode: true,
     experimental: {
