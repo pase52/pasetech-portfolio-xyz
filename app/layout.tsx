@@ -97,7 +97,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <VercelAnalytics />
           <JotaiProvider>
             <TooltipProvider delayDuration={500}>
-              <div className="flex flex-col justify-between h-screen font-sans">
+              <div className="flex h-screen flex-col justify-between font-sans">
                 {/* <SearchProvider searchConfig={siteMetadata.search as SearchConfig}> */}
                 {/* <Header session={session} /> */}
                 {/* <main className="pt-20 mb-auto"> */}

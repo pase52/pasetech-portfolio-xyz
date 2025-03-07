@@ -100,7 +100,7 @@ const SiteLogo = ({
       />
     )
   }
-  
+
   if (logoType === 'text') {
     return (
       <div className={cn('font-bold', className)}>

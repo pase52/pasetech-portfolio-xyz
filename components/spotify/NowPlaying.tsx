@@ -65,14 +65,14 @@ export default function NowPlaying() {
   }
 
   return (
-    <div className="flex items-center justify-center mt-4 space-x-2 sm:flex-row sm:justify-start sm:space-x-2">
+    <div className="mt-4 flex items-center justify-center space-x-2 sm:flex-row sm:justify-start sm:space-x-2">
       <AnimatedBars />
 
       <div className="inline-flex max-w-[70%] items-center space-x-2 text-sm sm:max-w-[90%] sm:text-base">
         <HoverCard>
           <HoverCardTrigger asChild>
             <a
-              className="inline-block font-medium truncate "
+              className="inline-block truncate font-medium "
               href={nowPlaying.songUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -82,7 +82,7 @@ export default function NowPlaying() {
           </HoverCardTrigger>
           <HoverCardContent className="w-auto border-none ring-0">
             <div className="flex content-center justify-between space-x-4">
-              <div className="w-24 h-24">
+              <div className="h-24 w-24">
                 <NextImage
                   src={nowPlaying.albumImageUrl || ''}
                   alt={`Couverture de l'album ${nowPlaying.album}`}

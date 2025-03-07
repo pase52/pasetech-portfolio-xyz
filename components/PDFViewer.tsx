@@ -21,7 +21,7 @@ export default function PDFViewer({ pdfFile }: PDFViewerProps) {
   useEffect(() => {
     const initializeWorker = async () => {
       try {
-        pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs';
+        pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs'
         setWorkerInitialized(true)
       } catch (error) {
         console.error('Failed to load PDF.js worker:', error)
@@ -56,12 +56,16 @@ export default function PDFViewer({ pdfFile }: PDFViewerProps) {
   }
 
   return (
-    <div className="flex justify-center pdf-container">
+    <div className="pdf-container flex justify-center">
       <Document
         file={pdfFile}
         onLoadSuccess={onDocumentLoadSuccess}
         loading={<div className="loading">Chargement du CV...</div>}
-        error={<div className="error">Impossible de charger le CV, vous pouvez le télécharger directement.</div>}
+        error={
+          <div className="error">
+            Impossible de charger le CV, vous pouvez le télécharger directement.
+          </div>
+        }
       >
         {Array.from(new Array(numPages), (_, index) => (
           <Page

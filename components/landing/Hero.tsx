@@ -33,7 +33,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className="container flex flex-col content-center justify-center h-screen px-4 py-5 mx-auto -mt-16 text-center">
+    <div className="container mx-auto -mt-16 flex h-screen flex-col content-center justify-center px-4 py-5 text-center">
       <h1 className="sr-only">{siteMetadata.title}</h1>
       {/* <ModelViewer /> */}
       <div>
@@ -45,7 +45,7 @@ export default function Hero() {
           className="text-4xl font-extrabold tracking-tighter text-primary sm:text-6xl"
         />
       </div>
-      <p className="max-w-lg mx-auto mt-3 text-gray-500 dark:text-gray-400 md:text-xl lg:text-lg xl:text-xl">
+      <p className="mx-auto mt-3 max-w-lg text-gray-500 dark:text-gray-400 md:text-xl lg:text-lg xl:text-xl">
         A la fois un portfolio, un blog, et notre premier point de contact
       </p>
 

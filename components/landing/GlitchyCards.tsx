@@ -27,7 +27,7 @@ export function MeteorsDemo() {
     },
   ]
   return (
-    <div className="grid items-center justify-center grid-cols-3 gap-1 my-10">
+    <div className="my-10 grid grid-cols-3 items-center justify-center gap-1">
       {data.map((project, index) => (
         <MeteorButton key={index} {...project} />
       ))}
@@ -66,7 +66,7 @@ export function MeteorCard({
         {/* <div
           className={`absolute inset-0 h-full w-full scale-[${glowScale}] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl`}
         /> */}
-        <div className="relative flex flex-col items-center justify-end h-full p-4 overflow-hidden bg-gray-900 border border-gray-800 shadow-xl rounded-2xl">
+        <div className="relative flex h-full flex-col items-center justify-end overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 p-4 shadow-xl">
           <h1 className="relative z-50 mb-4 text-lg font-bold text-white">{title}</h1>
           {description && (
             <p className="relative z-50 mb-4 text-base font-normal text-slate-500">{description}</p>
@@ -75,7 +75,7 @@ export function MeteorCard({
           <Button
             asChild
             variant={'ghost'}
-            className="px-4 py-1 text-gray-300 transition duration-200 border border-gray-500 rounded-lg hover:scale-10"
+            className="hover:scale-10 rounded-lg border border-gray-500 px-4 py-1 text-gray-300 transition duration-200"
           >
             <Link href={url}>{buttonText}</Link>
           </Button>
@@ -106,10 +106,10 @@ export function MeteorButton({
           className={`absolute inset-0 h-full w-full scale-[${glowScale}] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl`}
         /> */}
         <Link href={url}>
-          <div className="relative flex flex-col items-center justify-end h-full p-4 overflow-hidden bg-gray-900 border border-gray-800 shadow-xl rounded-2xl">
+          <div className="relative flex h-full flex-col items-center justify-end overflow-hidden rounded-2xl border border-gray-800 bg-gray-900 p-4 shadow-xl">
             <div className="flex flex-row items-center space-x-2">
               <h1 className="relative z-50 text-lg font-bold text-white">{title}</h1>
-              <LuArrowUpRight className="w-5 h-5 text-white" />
+              <LuArrowUpRight className="h-5 w-5 text-white" />
             </div>
 
             <Meteors number={meteors} color={meteorsColor} />

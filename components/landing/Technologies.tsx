@@ -82,7 +82,7 @@ export function Technologies() {
   }
 
   return (
-    <div className="w-full my-10">
+    <div className="my-10 w-full">
       <h3 className="text-2xl font-extrabold leading-9 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
         Technologies maitrisés
       </h3>
@@ -117,7 +117,9 @@ export function Technologies() {
                   <CardHeader>
                     <CardTitle>{getCategoryDisplayName(category)}</CardTitle>
                     {category === 'Most Used' && (
-                      <CardDescription>Ce sont mes technologies les plus utilisées.</CardDescription>
+                      <CardDescription>
+                        Ce sont mes technologies les plus utilisées.
+                      </CardDescription>
                     )}
                   </CardHeader>
                   <CardContent>
@@ -129,14 +131,10 @@ export function Technologies() {
                               className={`h-14 p-2 sm:p-2 ${skill.level === 'learning' ? 'border border-green-300' : ''}`}
                               variant="outline"
                             >
-                              <IconsBundle 
-                                kind={skill.id} 
-                                size={
-                                  skill.id === "gitlab" ? 15 : 
-                                  skill.id === "proxmox" ? 11 : 
-                                  10
-                                } 
-                                iconType="icon" 
+                              <IconsBundle
+                                kind={skill.id}
+                                size={skill.id === 'gitlab' ? 15 : skill.id === 'proxmox' ? 11 : 10}
+                                iconType="icon"
                               />
                             </Button>
                           </HybridTooltipTrigger>
@@ -148,21 +146,21 @@ export function Technologies() {
                     </div>
                   </CardContent>
                   {category !== 'Most Used' && (
-                    <CardFooter className="flex flex-row items-center px-6 py-3 border-t bg-muted/50">
+                    <CardFooter className="flex flex-row items-center border-t bg-muted/50 px-6 py-3">
                       {/* <div className="text-xs text-muted-foreground">
                     Updated <time dateTime="2023-11-23">November 23, 2023</time>
                   </div> */}
                       <div className="flex items-center text-xs text-muted-foreground">
-                        <span className="inline-block w-3 h-3 mx-1 bg-green-300 rounded-full"></span>
+                        <span className="mx-1 inline-block h-3 w-3 rounded-full bg-green-300"></span>
                         <span>En train d'apprendre</span>
                       </div>
-                      <Pagination className="w-auto ml-auto mr-0">
+                      <Pagination className="ml-auto mr-0 w-auto">
                         <PaginationContent>
                           <PaginationItem>
                             <Button
                               size="icon"
                               variant="outline"
-                              className="w-6 h-6"
+                              className="h-6 w-6"
                               onClick={onPrevTab}
                             >
                               <ChevronLeft className="h-3.5 w-3.5" />
@@ -173,7 +171,7 @@ export function Technologies() {
                             <Button
                               size="icon"
                               variant="outline"
-                              className="w-6 h-6"
+                              className="h-6 w-6"
                               onClick={onNextTab}
                             >
                               <ChevronRight className="h-3.5 w-3.5" />

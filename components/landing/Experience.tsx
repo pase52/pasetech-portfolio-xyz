@@ -19,7 +19,7 @@ import {
 
 function TechnologyIcons({ technologies }: { technologies: TechStackType[] }) {
   return (
-    <div className="flex flex-wrap items-center pt-1 space-x-2 text-xs">
+    <div className="flex flex-wrap items-center space-x-2 pt-1 text-xs">
       <span className="mr-2">Technologies utilisés:</span>
       <TooltipProvider>
         {technologies.map((tech, index) => (
@@ -65,7 +65,7 @@ function createTimelineItems(experiences: Experience[]): TimelinePropsItem[] {
 
 export function Experience() {
   return (
-    <div className="w-full my-10">
+    <div className="my-10 w-full">
       <h3 className="text-2xl font-extrabold leading-9 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
         Expérience
       </h3>
@@ -82,7 +82,7 @@ export function Experience() {
                 className="flex w-full text-left "
                 value={company.name}
               >
-                <div className="flex items-center justify-between w-full">
+                <div className="flex w-full items-center justify-between">
                   <span>{company.name}</span>
                   <span
                     className={`mx-1 inline-block h-3 w-3 rounded-full  ${company.active ? 'bg-green-300' : ''}`}
@@ -96,7 +96,7 @@ export function Experience() {
             className="mx-[15px] hidden data-[orientation=vertical]:h-56 data-[orientation=vertical]:w-px md:flex"
           />
           {experienceData.map((company) => (
-            <TabsContent key={company.name} value={company.name} className="w-full mt-4 md:mt-0">
+            <TabsContent key={company.name} value={company.name} className="mt-4 w-full md:mt-0">
               <Card
                 key={`card-${company.name}`}
                 className="border-none shadow-sm outline-none ring-0"

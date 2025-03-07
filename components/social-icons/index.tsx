@@ -97,7 +97,7 @@ import {
   JenkinsIcon,
   ArgocdIcon,
   ProxmoxIcon,
-  PrometheusIcon
+  PrometheusIcon,
 } from './icons'
 
 import Image from 'next/image'
@@ -132,7 +132,7 @@ import { LuCandy } from 'react-icons/lu'
 import { SiBuymeacoffee } from 'react-icons/si'
 import { FaPhp } from 'react-icons/fa'
 import { FaLaravel } from 'react-icons/fa'
-import { FaGitlab } from "react-icons/fa6";
+import { FaGitlab } from 'react-icons/fa6'
 
 const components = {
   candy: LuCandy,
