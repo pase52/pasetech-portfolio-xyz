@@ -2,31 +2,31 @@
 
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Andrew Sameh',
-  author: 'Andrew Sameh',
-  headerTitle: 'Andrew Sameh',
-  description: `An over-engineered personal blog where I write about software engineering, productivity, and other stupid stuff. Also, it's my portfolio.`,
-  language: 'en-us',
+  title: 'PaseTech',
+  author: 'Florian DOS SANTOS',
+  headerTitle: 'Header PaseTech',
+  description: `Mon blog personnel sur lequel j'écris sur l'ingénierie logicielle, la productivité et d'autres trucs.. C'est aussi mon portfolio ! :D`,
+  language: 'fr-FR',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://www.andrewsam.xyz',
-  analyticsURL:
-  "https://cloud.umami.is/share/Uyouy7mKI5Oy68QX/andrewsam.xyz",
-  siteRepo: 'https://github.com/andrew-sameh/andrewsam.xyz',
+  siteUrl: 'https://www.pasetech.fr',
+  analyticsURL: 'https://cloud.umami.is/share/GYZ9G8D6zcS60wTV/pasetech.fr',
+  siteRepo: 'https://github.com/pase52/pasetech-portfolio-xyz',
   siteLogo: '/static/images/site/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   // mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'g.andrewsameh@gmail.com',
-  github: 'https://github.com/andrew-sameh',
-  x: 'https://twitter.com/AndrewSamh',
-  twitter: 'https://twitter.com/AndrewSamh',
+  email: 'florian@pasetech.fr',
+  github: 'https://github.com/pase52',
+  x: 'https://twitter.com/pase52',
+  twitter: 'https://twitter.com/pase52',
   // facebook: 'https://facebook.com',
   // youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com/in/andrewsameh/',
+  linkedin: 'https://www.linkedin.com/in/fds13/',
   // threads: 'https://www.threads.net',
-  instagram: 'https://www.instagram.com/andrewzameh/',
-  spotify: 'https://open.spotify.com/user/nm8cvqw3q56ft39knd63d1dgw',
-  buymeacoffee: 'https://buymeacoffee.com/andrewsameh',
-  locale: 'en-US',
+  // instagram: 'https://www.instagram.com/andrewzameh/',
+  gitlab: 'https://gitlab.com/apsfdossantos',
+  spotify: 'https://open.spotify.com/user/pase52',
+  // buymeacoffee: 'https://buymeacoffee.com/andrewsameh',
+  locale: 'fr-FR',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
@@ -81,7 +81,7 @@ const siteMetadata = {
       // example: https://giscus.app/themes/custom_example.css
       themeURL: '',
       // This corresponds to the `data-lang="en"` in giscus's configurations
-      lang: 'en',
+      lang: 'fr',
     },
   },
   search: {

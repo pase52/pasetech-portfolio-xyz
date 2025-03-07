@@ -65,14 +65,14 @@ export default function NowPlaying() {
   }
 
   return (
-    <div className="mt-4 flex items-center justify-center space-x-2 sm:flex-row sm:justify-start sm:space-x-2">
+    <div className="flex items-center justify-center mt-4 space-x-2 sm:flex-row sm:justify-start sm:space-x-2">
       <AnimatedBars />
 
       <div className="inline-flex max-w-[70%] items-center space-x-2 text-sm sm:max-w-[90%] sm:text-base">
         <HoverCard>
           <HoverCardTrigger asChild>
             <a
-              className="inline-block truncate font-medium "
+              className="inline-block font-medium truncate "
               href={nowPlaying.songUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -80,20 +80,20 @@ export default function NowPlaying() {
               {truncate(nowPlaying.title, 24)}
             </a>
           </HoverCardTrigger>
-          <HoverCardContent className="w-auto  border-none ring-0">
+          <HoverCardContent className="w-auto border-none ring-0">
             <div className="flex content-center justify-between space-x-4">
-              <div className="h-24 w-24">
+              <div className="w-24 h-24">
                 <NextImage
                   src={nowPlaying.albumImageUrl || ''}
-                  alt={`Album cover of ${nowPlaying.album}`}
+                  alt={`Couverture de l'album ${nowPlaying.album}`}
                   width={96}
                   height={96}
                 />
               </div>
 
               <div className="w-40 space-y-1">
-                <h4 className="text-sm font-semibold">Title: {nowPlaying.title}</h4>
-                <p className="text-sm">Artist: {nowPlaying.artist}</p>
+                <h4 className="text-sm font-semibold">Titre: {nowPlaying.title}</h4>
+                <p className="text-sm">Artiste: {nowPlaying.artist}</p>
                 <p className="text-sm">Album: {nowPlaying.album}</p>
               </div>
             </div>

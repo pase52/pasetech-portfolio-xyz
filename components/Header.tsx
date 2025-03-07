@@ -54,10 +54,10 @@ const Header = ({ session }: { session: Session | null }) => {
     >
       <div className="mx-auto flex h-[60px] w-full items-center justify-between">
         <div>
-          <SiteLogo kind={'logo'} size={10} logoType="link" />
+          <SiteLogo kind={'logo'} size={10} logoType="text" />
         </div>
         <div className="flex items-center md:space-x-3">
-          <NavigationMenu className="hidden  md:flex">
+          <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               {headerNavLinks.map(
                 (link, i) =>
@@ -117,11 +117,11 @@ export default Header
 //               <li className="row-span-3">
 //                 <NavigationMenuLink asChild>
 //                   <a
-//                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+//                     className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none bg-gradient-to-b from-muted/50 to-muted focus:shadow-md"
 //                     href="/"
 //                   >
-//                     <Icons.logo className="h-6 w-6" />
-//                     <div className="mb-2 mt-4 text-lg font-medium">shadcn/ui</div>
+//                     <Icons.logo className="w-6 h-6" />
+//                     <div className="mt-4 mb-2 text-lg font-medium">shadcn/ui</div>
 //                     <p className="text-sm leading-tight text-muted-foreground">
 //                       Beautifully designed components that you can copy and paste into your apps.
 //                       Accessible. Customizable. Open Source.
@@ -179,7 +179,7 @@ export default Header
 //             {...props}
 //           >
 //             <div className="text-sm font-medium leading-none">{title}</div>
-//             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+//             <p className="text-sm leading-snug line-clamp-2 text-muted-foreground">{children}</p>
 //           </a>
 //         </NavigationMenuLink>
 //       </li>

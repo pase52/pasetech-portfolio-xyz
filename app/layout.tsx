@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: './',
     siteName: siteMetadata.title,
     images: [siteMetadata.socialBanner],
-    locale: 'en_US',
+    locale: 'fr_FR',
     type: 'website',
   },
   alternates: {
@@ -97,10 +97,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <VercelAnalytics />
           <JotaiProvider>
             <TooltipProvider delayDuration={500}>
-              <div className="flex h-screen flex-col justify-between font-sans">
+              <div className="flex flex-col justify-between h-screen font-sans">
                 {/* <SearchProvider searchConfig={siteMetadata.search as SearchConfig}> */}
                 {/* <Header session={session} /> */}
-                {/* <main className="mb-auto pt-20"> */}
+                {/* <main className="pt-20 mb-auto"> */}
                 {children}
                 {/* </main> */}
                 {/* <Footer /> */}

@@ -178,9 +178,7 @@ export const TimelineItemDateRange = ({
   const months = totalMonths % 12
 
   const duration =
-    years > 0
-      ? `${years} yr${years > 1 ? 's' : ''} ${months} mo${months > 1 ? 's' : ''}`
-      : `${months} mo${months > 1 ? 's' : ''}`
+    years > 0 ? `${years} an${years > 1 ? 's' : ''} ${months} mois` : `${months} mois`
 
   return (
     <div className="pt-1 text-xs">{`${formattedStartDate} - ${formattedEndDate} · ${duration}`}</div>

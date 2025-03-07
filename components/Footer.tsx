@@ -10,12 +10,12 @@ export default function Footer() {
   return (
     <footer>
       <SectionContainer>
-        <div className="mb-0 flex flex-col justify-start space-x-0 space-y-3 py-10">
+        <div className="flex flex-col justify-start py-10 mb-0 space-x-0 space-y-3">
           <div className="flex flex-col items-center space-y-3 text-sm sm:flex-row sm:justify-between sm:text-base">
             {/* <Suspense fallback="loading..."> */}
             <NowPlaying />
             {/* </Suspense> */}
-            <ul className="flex cursor-pointer items-center space-x-5">
+            <ul className="flex items-center space-x-5 cursor-pointer">
               <li>
                 <IconsBundle kind="linkedin" href={siteMetadata.linkedin} size={5} />
               </li>
@@ -29,11 +29,11 @@ export default function Footer() {
                 <IconsBundle kind="spotify" href={siteMetadata.spotify} size={5} />
               </li>
               <li>
-                <IconsBundle kind="instagram" href={siteMetadata.instagram} size={5} />
+                <IconsBundle kind="gitlabfa" href={siteMetadata.gitlab} size={5} />
               </li>
-              <li>
+              {/* <li>
                 <IconsBundle kind="buymeacoffee" href={siteMetadata.buymeacoffee} size={5} />
-              </li>
+              </li> */}
               {/* <li>
               <IconsBundle kind="twitter" href={siteMetadata.twitter} size={6} />
             </li> */}

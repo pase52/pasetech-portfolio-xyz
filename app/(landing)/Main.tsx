@@ -19,7 +19,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="">
-        <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
+        <Suspense fallback={<LuLoader2 className="w-4 h-4 mx-auto my-10 animate-spin" />}>
           <Hero />
         </Suspense>
 
@@ -33,20 +33,20 @@ export default function Home({ posts }) {
         </SectionContainer>
         <SectionContainer>
           <Separator />
-          <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
+          <Suspense fallback={<LuLoader2 className="w-4 h-4 mx-auto my-10 animate-spin" />}>
             <GithubCal />
           </Suspense>
         </SectionContainer>
         <SectionContainer>
           <Separator />
-          <Suspense fallback={<LuLoader2 className="mx-auto my-10 h-4 w-4 animate-spin" />}>
+          <Suspense fallback={<LuLoader2 className="w-4 h-4 mx-auto my-10 animate-spin" />}>
             <RecentPosts posts={posts} />
           </Suspense>
         </SectionContainer>
-        <SectionContainer>
+        {/* <SectionContainer>
           <Separator />
           <TopTracks />
-        </SectionContainer>
+        </SectionContainer> */}
         <SectionContainer>
           <Separator />
           <MeteorsDemo />

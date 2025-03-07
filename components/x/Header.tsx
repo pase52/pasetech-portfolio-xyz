@@ -35,7 +35,7 @@ export function Header({ session, isCollapsed }: HeaderProps) {
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="w-5 h-5"
             >
               <path
                 d="M3 5H11"
@@ -70,7 +70,7 @@ export function Header({ session, isCollapsed }: HeaderProps) {
               prefetch={false}
             >
               <SiteLogo kind="darklogo" logoType="image" size={8} />
-              <span className="sr-only">Andrew Sameh</span>
+              <span className="sr-only">PaseTech</span>
             </Link>
 
             {dashboardNavLinks.map((navLink) => {
@@ -116,14 +116,14 @@ export function Header({ session, isCollapsed }: HeaderProps) {
           </div>
         </SheetContent>
       </Sheet>
-      <div className="w-full flex-1">
+      <div className="flex-1 w-full">
         <form>
           <div className="relative">
             <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
               placeholder="Search..."
-              className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
+              className="w-full pl-8 shadow-none appearance-none bg-background md:w-2/3 lg:w-1/3"
               disabled
             />
           </div>

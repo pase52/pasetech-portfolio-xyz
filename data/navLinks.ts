@@ -1,10 +1,10 @@
 export const headerNavLinks = [
-  { href: '/', title: 'Home' },
+  { href: '/', title: 'Accueil' },
   { href: '/blog', title: 'Blog', disabled: false, tooltip: 'Soon..' },
   { href: '/tags', title: 'Tags', hidden: true },
-  { href: '/projects', title: 'Projects' },
-  { href: '/about', title: 'About' },
-  { href: '/resume', title: 'Resume' },
+  { href: '/projects', title: 'Projets' },
+  { href: '/about', title: 'À propos' },
+  { href: '/resume', title: 'Mon CV' },
 ]
 
 

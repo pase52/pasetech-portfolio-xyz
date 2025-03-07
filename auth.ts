@@ -25,7 +25,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           body: JSON.stringify({
             from: provider.from,
             to: email,
-            subject: `Verify Email for Andrew Sam`,
+            subject: `Verify Email for PaseTech`,
             html: render(VerifyUserEmailTemplate({ inviteLink: url })),
             text: render(VerifyUserEmailTemplate({ inviteLink: url }), { plainText: true }),
           }),

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 
 type SiteLogoProps = {
   kind: 'logo' | 'darklogo' | 'tlogolight' | 'tlogodark' | 'tlogogrey'
-  logoType?: 'image' | 'link' | 'button'
+  logoType?: 'image' | 'link' | 'button' | 'text'
   size?: number
   className?: string
   parentClassName?: string
@@ -31,7 +31,7 @@ const SiteLogo = ({
   const pxHeight = size ? size * 4 : 0
 
   const logoMap = {
-    logo: '/static/site/logo.svg',
+    logo: '/static/site/logo.png',
     darklogo: '/static/site/logo-d.svg',
     tlogolight: '/static/site/logo-tw.svg',
     tlogodark: '/static/site/logo-tb.svg',
@@ -52,10 +52,10 @@ const SiteLogo = ({
           <div className="flex items-center justify-between">
             <Image
               src={imagePath}
-              alt={'Andrew Sam'}
+              alt={'PaseTech'}
               width={`${pxWidth}`}
               height={`${pxHeight}`}
-              title={'Andrew Sam'}
+              title={'PaseTech'}
               priority={true} // {false} | {true}
               className={cn('drop-shadow-lg filter', className)}
             />
@@ -91,13 +91,21 @@ const SiteLogo = ({
     return (
       <Image
         src={imagePath}
-        alt={'Andrew Sam'}
+        alt={'PaseTech'}
         width={`${pxWidth}`}
         height={`${pxHeight}`}
-        title={'Andrew Sam'}
+        title={'PaseTech'}
         priority={true} // {false} | {true}
         className={cn('drop-shadow-lg filter', className)}
       />
+    )
+  }
+  
+  if (logoType === 'text') {
+    return (
+      <div className={cn('font-bold', className)}>
+        Pase<span className="text-primary"> | </span>Tech
+      </div>
     )
   }
 }

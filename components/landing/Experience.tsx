@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { skillsData } from '@/data/mainData'
 import IconsBundle from '../social-icons'
 import { experienceData, type Experience, type TechStackType } from '@/data/mainData'
@@ -18,17 +19,27 @@ import {
 
 function TechnologyIcons({ technologies }: { technologies: TechStackType[] }) {
   return (
-    <div className="flex flex-wrap items-center space-x-2 pt-1 text-xs">
-      <span className="mr-2">Technologies used:</span>
-      {technologies.map((tech, index) => (
-        <IconsBundle
-          key={index}
-          kind={tech.name.toLowerCase()}
-          size={4}
-          iconType="link"
-          href={tech.href}
-        />
-      ))}
+    <div className="flex flex-wrap items-center pt-1 space-x-2 text-xs">
+      <span className="mr-2">Technologies utilisés:</span>
+      <TooltipProvider>
+        {technologies.map((tech, index) => (
+          <Tooltip key={index}>
+            <TooltipTrigger asChild>
+              <span>
+                <IconsBundle
+                  kind={tech.name.toLowerCase()}
+                  size={4}
+                  iconType="link"
+                  href={tech.href}
+                />
+              </span>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{tech.name}</p>
+            </TooltipContent>
+          </Tooltip>
+        ))}
+      </TooltipProvider>
     </div>
   )
 }
@@ -54,9 +65,9 @@ function createTimelineItems(experiences: Experience[]): TimelinePropsItem[] {
 
 export function Experience() {
   return (
-    <div className="my-10 w-full">
+    <div className="w-full my-10">
       <h3 className="text-2xl font-extrabold leading-9 tracking-tight sm:text-3xl sm:leading-10 md:text-4xl md:leading-14">
-        Experience
+        Expérience
       </h3>
       <div className="mt-5">
         <Tabs
@@ -71,7 +82,7 @@ export function Experience() {
                 className="flex w-full text-left "
                 value={company.name}
               >
-                <div className="flex w-full items-center justify-between">
+                <div className="flex items-center justify-between w-full">
                   <span>{company.name}</span>
                   <span
                     className={`mx-1 inline-block h-3 w-3 rounded-full  ${company.active ? 'bg-green-300' : ''}`}
@@ -85,7 +96,7 @@ export function Experience() {
             className="mx-[15px] hidden data-[orientation=vertical]:h-56 data-[orientation=vertical]:w-px md:flex"
           />
           {experienceData.map((company) => (
-            <TabsContent key={company.name} value={company.name} className="mt-4 w-full md:mt-0">
+            <TabsContent key={company.name} value={company.name} className="w-full mt-4 md:mt-0">
               <Card
                 key={`card-${company.name}`}
                 className="border-none shadow-sm outline-none ring-0"

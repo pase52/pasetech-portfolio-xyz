@@ -90,6 +90,14 @@ import {
   Locust,
   Fiber,
   Stripe,
+  GitlabIcon,
+  WrikeIcon,
+  CmakeIcon,
+  KubernetesIcon,
+  JenkinsIcon,
+  ArgocdIcon,
+  ProxmoxIcon,
+  PrometheusIcon
 } from './icons'
 
 import Image from 'next/image'
@@ -122,6 +130,9 @@ import { LuLogOut } from 'react-icons/lu'
 import { LuPizza } from 'react-icons/lu'
 import { LuCandy } from 'react-icons/lu'
 import { SiBuymeacoffee } from 'react-icons/si'
+import { FaPhp } from 'react-icons/fa'
+import { FaLaravel } from 'react-icons/fa'
+import { FaGitlab } from "react-icons/fa6";
 
 const components = {
   candy: LuCandy,
@@ -238,6 +249,17 @@ const components = {
   vllm: VLLM,
   fiber: Fiber,
   stripe: Stripe,
+  php: FaPhp,
+  laravel: FaLaravel,
+  gitlab: GitlabIcon,
+  wrike: WrikeIcon,
+  cmake: CmakeIcon,
+  kubernetes: KubernetesIcon,
+  jenkins: JenkinsIcon,
+  argocd: ArgocdIcon,
+  proxmox: ProxmoxIcon,
+  prometheus: PrometheusIcon,
+  gitlabfa: FaGitlab,
 }
 
 type IconsBundleProps = {
