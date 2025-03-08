@@ -5,9 +5,10 @@ export interface Project {
   imgSrc: string
   url?: string
   repo?: string
+  blogPost?: string // New property for linking to blog posts
   builtWith: string[]
   hidden?: boolean
-
+  cta?: boolean // Nouvelle propriété pour afficher un Call to Action
 }
 
 export interface Company {
@@ -22,13 +23,11 @@ export interface Company {
   description?: string
   descCard?: string
   items: Experience[]
-
 }
 
 export interface TechStackType {
   name: string
   href?: string
-
 }
 export interface Experience {
   title: string
@@ -44,7 +43,7 @@ export interface Experience {
 export interface Skill {
   name: string
   id: string
-  category: "Langages" | "Web Dev" | "AI & Data Science" | "DevOps & Outils" 
+  category: 'Langages' | 'Web Dev' | 'AI & Data Science' | 'DevOps & Outils'
   field?: string
   subfield?: string
   description?: string
@@ -55,69 +54,107 @@ export interface Skill {
   mostUsed?: boolean
 }
 
-export let projectsData: Project[] = [
-
+export const projectsData: Project[] = [
   {
     type: 'work',
-    title: 'FlowPandas',
-    description: 'FlowPandas is an AI BI analyst microservice that allows users to interact with their reports through a chat interface to generate BI insights. The microservice provides text explanations, tables of the data, and visualizations. It connects to an API that supplies JSON data for analysis.',
-    imgSrc: '/static/images/projects/7.jpg',
-    builtWith: ['Redis Stack', 'OpenAI GPT-3.5', 'FastAPI', 'Pandas', 'PandasAI', 'Langchain'],
+    title: 'AngelProtectSystem',
+    description:
+      "APS était un projet de sécurité sur les chantiers créer en 2018 en collaboration avec Total Marketing France, connectant des caméras 4G/Solaire placés sur un ensemble de chantiers. Les caméras étaient connectées à une appli web, permettant de visualiser les différentes prise de vue par des experts de la sécurité sur les chantiers, et de générer des rapports en cas d'incidents.",
+    imgSrc: '/static/images/projects/9.jpg',
+    builtWith: [
+      'Symfony',
+      'Laravel',
+      'Gitlab',
+      'Jenkins',
+      'Prometheus',
+      'Grafana',
+      'InfluxDB',
+      'Docker',
+      'AWS',
+      'Azure',
+      'Python',
+    ],
+    url: 'https://www.facebook.com/p/Angel-Protect-System-APS-by-TOTAL-100070859977073',
   },
   {
     type: 'work',
-    title: 'Quality AI',
-    description: 'A full-stack web application assists quality auditors by analyzing support agent calls. It uses the Whisper ASR model to transcribe calls, detects silence gaps, and performs text analysis to flag inappropriate language. The Mistral LLM summarizes calls and evaluates them against predefined criteria to generate a call score. The app integrates with ticketing systems like Zendesk and TeamSupport for real-time ticket updates and supports real-time processing and analysis with deployed ASR and LLM models.',
-    imgSrc: '/static/images/projects/1.jpg',
-    builtWith: ['Mistral LLM', 'Whisper ASR', 'VLLM', 'Sveltekit', 'FastAPI', 'Docker', 'Postgres', 'AWS', 'GitHub', 'NGINX', 'Prisma', 'Tailwind'],
+    title: 'Prevol',
+    description:
+      "Prevol est une application de gestion et modélisation interactive des plans de vol développée pour Dassault Aviation. Utilisable sur une dalle tactile géante, elle simplifie la gestion des vols d'essais grâce à une interface intuitive sous forme de timeline. Le projet, réalisé en mode agile, a permis l'enregistrement rapide de plus de 1000 vols. Suite à son succès, une nouvelle version (Prevol-NG) est en cours de développement.",
+    imgSrc: '/static/images/projects/11.webp',
+    builtWith: [
+      'Angular',
+      'Springboot',
+      'Jenkins',
+      'Kubernetes',
+      'XLDeploy',
+      'Docker',
+      'Harbor',
+      'Python',
+      'Gitlab',
+    ],
+    url: 'https://www.apside.com/fr/projets/prevol-la-modelisation-de-plans-de-vol-dassault-aviation/',
   },
   {
     type: 'work',
-    title: 'AI Support Helper',
-    description: 'AI Support Helper is a microservice integrated with the Teamsupport ticketing system to track new tickets created by clients. It generates possible fixes for tickets and provides outage notifications if a matching outage article is found. The microservice searches for ticket information in a vector database that is updated periodically to ensure its knowledge remains current.',
-    imgSrc: '/static/images/projects/2.jpg',
-    builtWith: ['OpenAI', 'Teamsupport API', 'MySQL', 'Pinecone', 'FastAPI', 'Docker', 'AWS', 'Langchain'],
+    title: 'Charleroi Esport',
+    description:
+      "La Charleroi Esport est le plus grand événement Esportif de Belgique, sur le jeu Counter-Strike. Accueillant 8 des plus grandes équipes de Counter Strike pendant 3 jours pour une compétition avec à la clé 100.000€ de cashprize. J'ai été en charge du déploiement de plus de 50 PC gaming, de la mise en place de serveurs redondants pour le gaming et l'entrainement, de la gestion de crise lors d'un événement diffusé en direct et de la création d'une API Python pour interfacer les données du serveur de jeu.",
+    imgSrc: '/static/images/projects/10.jpg',
+    builtWith: [
+      'Optimisation système Debian',
+      'Ansible',
+      'Grafana',
+      'Prometheus',
+      'Python',
+      'Docker',
+      'LanCache',
+    ],
+    url: 'https://www.facebook.com/charleroiesports',
   },
   {
     type: 'work',
-    title: 'DocChat',
-    description: 'DocChat is a Retrieval-Augmented Generation (RAG) microservice that enables users to interact with documentation. It keeps track of all the content within PDF pages, including text, page numbers, images, categories, and subcategories. This microservice allows for efficient and accurate information retrieval during chats with documentation.',
+    title: 'Notre prochain projet ensemble ?',
+    description:
+      "Vous avez un projet innovant et vous cherchez un ingénieur DevOps pour vous accompagner dans sa réalisation ? N'hésitez pas à me contacter pour discuter de votre projet et de la manière dont je pourrais vous aider à le concrétiser.",
     imgSrc: '/static/images/projects/3.jpg',
-    builtWith: ['OpenAI', 'Pinecone', 'FastAPI', 'Docker', 'AWS S3', 'Langchain'],
-  },
-  {
-    type: 'work',
-    title: 'Backlog Classifier',
-    description: 'Backlog Classifier is a tool designed to organize backlog tickets by classifying them into clusters based on their embeddings. It then generates a title for each cluster using a Large Language Model (LLM), streamlining the management and prioritization of tickets.',
-    imgSrc: '/static/images/projects/4.jpg',
-    builtWith: ['OpenAI GPT-3.5', 'OpenAI Ada', 'FastAPI', 'PyTorch', 'Pandas'],
-  },
-  {
-    type: 'work',
-    title: 'Tendering App',
-    description: 'Tendering App is a full-stack application designed to facilitate the tendering process. It allows contractors, consultants, and suppliers to apply to clients\' tenders, which can then be managed by software admins. The app includes an admin page to control all aspects of the application, ensuring efficient and streamlined tender management.',
-    imgSrc: '/static/images/projects/5.jpg',
-    builtWith: ['Next.js', 'Postgres', 'AWS S3', 'Prisma', 'Tailwind'],
+    cta: true,
+    builtWith: [],
   },
   {
     type: 'self',
-    title: 'Personal website',
+    title: 'Portfolio / Blog PaseTech',
     imgSrc: '/static/images/projects/6.jpg',
-    repo: 'andrewsam.xyz',
-    url: 'https://andrewsam.xyz',
-    builtWith: ['Next.js', 'Tailwind', 'Typescript', 'Prisma', 'Umami'],
+    description:
+      "Mon portfolio personnel et blog, développé avec Next.js, Tailwind, Typescript, Prisma et Umami. J'avais besoin de me refaire la main sur Next.js, et un besoin de visibilité sur mes projets et compétences, c'était l'occasion parfaite.",
+    url: 'https://github.com/pase52/pasetech-portfolio-xyz',
+    builtWith: ['Next.js', 'Tailwind', 'Typescript', 'Prisma', 'Umami', 'ShadCDN', 'MongoDB'],
   },
   {
     type: 'self',
-    title: 'AI Voice Assistant',
+    title: 'Home Stack',
     imgSrc: '/static/images/projects/7.jpg',
-    builtWith: ['OpenAI', 'Langchain', 'Deepgram', 'FastAPI', 'Docker', 'Oracle Cloud', 'LiveKit Agents', 'Pinecone', 'Next.js', 'Postgres', 'WebRTC', 'NGINX'],
-    description: "The AI Voice Assistant is a full-stack application designed to facilitate seamless customer interactions through voice commands. It leverages WebRTC to handle reservations, communicate with external APIs for information retrieval, and interact with the backend to manage reservations, including submissions, inquiries, and cancellations. Additionally, the project features a second voice assistant based on Retrieval-Augmented Generation (RAG), allowing users to upload PDF or DOCX files and engage in voice-based conversations to query the document's content.",
-    repo: 'VoiceAssistant-Backend',
-    url:'https://rtc.andrewsam.xyz/'
-  }
-  
-];
+    builtWith: [
+      'OpenAI',
+      'ollama',
+      'Langchain',
+      'Python',
+      'FastAPI',
+      'Docker',
+      'Oracle Cloud',
+      'Pinecone',
+      'Postgres',
+      'WebRTC',
+      'NGINX',
+      'Grafana',
+      'Prometheus',
+      'Ansible',
+      'Terraform',
+    ],
+    description:
+      "Ma stack Maison ! Comprennant un ensemble de service utiles, je prépare la maison connectée de demain en auto-hébergeant l'ensemble des services que j'utilise au quotidien. D'un Jarvis relié à un LLM jusqu'a ma gestion de liste de courses interconnectés à mes caméras, j'adore intégré les services entre eux et utilisé la data au mieux. Un blog post est en cours de rédaction pour expliquer l'ensemble de la stack.",
+  },
+]
 
 // export let experienceData: Company[] = [
 //   {
@@ -356,8 +393,7 @@ export let experienceData: Company[] = [
   {
     name: 'CIS',
     location: 'Rognac - France',
-    description:
-      'Support IT complet et maintenance des systèmes en divers rôles.',
+    description: 'Support IT complet et maintenance des systèmes en divers rôles.',
     imgSrc: '', // Ajoutez l'URL de votre logo ou une image de remplacement
     url: '',
     active: false,
@@ -385,8 +421,7 @@ export let experienceData: Company[] = [
   {
     name: 'ARS',
     location: 'Marseille - France',
-    description:
-      'Support IT et assistance helpdesk dans un environnement technique dynamique.',
+    description: 'Support IT et assistance helpdesk dans un environnement technique dynamique.',
     imgSrc: '', // Ajoutez l'URL de votre logo ou une image de remplacement
     url: 'https://www.ars-info.com/',
     active: false,
@@ -427,8 +462,7 @@ export let experienceData: Company[] = [
       },
     ],
   },
-];
-
+]
 
 export let skillsData: Skill[] = [
   {
@@ -459,7 +493,6 @@ export let skillsData: Skill[] = [
     subfield: 'Frameworks',
     level: 'advanced',
     mostUsed: true,
-
   },
   {
     name: 'Tailwind',
@@ -469,7 +502,6 @@ export let skillsData: Skill[] = [
     subfield: 'Styling',
     level: 'advanced',
     mostUsed: true,
-
   },
   {
     name: 'ShadCN',
@@ -504,7 +536,6 @@ export let skillsData: Skill[] = [
     subfield: 'Frameworks',
     level: 'familiar',
     mostUsed: true,
-
   },
   {
     name: 'Python',
@@ -512,7 +543,6 @@ export let skillsData: Skill[] = [
     category: 'Langages',
     level: 'familiar',
     mostUsed: true,
-
   },
   {
     name: 'C Lang',
@@ -534,7 +564,6 @@ export let skillsData: Skill[] = [
     field: 'Backend',
     level: 'familiar',
     mostUsed: true,
-
   },
   {
     name: 'Django',
@@ -557,7 +586,6 @@ export let skillsData: Skill[] = [
     field: 'Containers',
     level: 'advanced',
     mostUsed: true,
-
   },
   {
     name: 'AWS',
@@ -632,7 +660,6 @@ export let skillsData: Skill[] = [
     subfield: 'Databases',
     level: 'advanced',
     hidden: true,
-
   },
   {
     name: 'MongoDB',
@@ -650,7 +677,6 @@ export let skillsData: Skill[] = [
     subfield: 'Databases',
     level: 'advanced',
     mostUsed: true,
-
   },
   {
     name: 'MySQL',
@@ -668,7 +694,6 @@ export let skillsData: Skill[] = [
     subfield: 'Databases',
     level: 'advanced',
     mostUsed: true,
-
   },
   {
     name: 'Bootstrap',
@@ -891,15 +916,15 @@ export let skillsData: Skill[] = [
     field: 'Tools',
     level: 'advanced',
     hidden: true,
-   },
-   {
+  },
+  {
     name: 'Github Actions',
     id: 'githubactions',
     category: 'DevOps & Outils',
     field: 'Deployment',
     level: 'advanced',
-   },
-   {
+  },
+  {
     name: 'Framer Motion',
     id: 'framermotion',
     category: 'Web Dev',
@@ -1008,4 +1033,3 @@ export let skillsData: Skill[] = [
     level: 'advanced',
   },
 ]
-

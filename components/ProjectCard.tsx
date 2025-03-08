@@ -1,20 +1,12 @@
 'use client'
-import useSWR from 'swr'
 import type { ProjectCardProps } from '@//types/components'
-import type { GithubRepository } from '@/types/server'
-import { swrFetcher } from '@/lib/utils'
-import { GithubRepo } from '@/components/GithubRepo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
-interface SWRResponse {
-  repository: GithubRepository
-}
+import { Button } from '@/components/ui/button'
+
 export function ProjectCard({ project }: ProjectCardProps) {
-  const { title, description, imgSrc, url, repo, builtWith } = project
-  const { data } = useSWR(repo ? `/api/github?repo=${repo}` : null, swrFetcher)
-  const repository: GithubRepository | undefined = data?.repository
-  const href = url || repository?.url
+  const { title, description, imgSrc, url, blogPost, builtWith } = project
 
   return (
     <Card className="md m-2 max-w-[544px] border-0 p-2 shadow-lg ">
@@ -25,13 +17,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           className="h-36 object-cover object-center lg:h-60"
           width={1088}
           height={612}
-          // objectFit="cover"
         />
         <div className="flex grow flex-col justify-between space-y-6 p-4 md:p-6">
           <div className="space-y-3">
             <h2 className="text-2xl font-bold leading-8 tracking-tight">
-              {href ? (
-                <Link href={href} aria-label={`Link to ${title}`}>
+              {url ? (
+                <Link href={url} aria-label={`Lien vers ${title}`}>
                   <span data-umami-event={title || 'project-press'}>{title}</span>
                 </Link>
               ) : (
@@ -39,35 +30,61 @@ export function ProjectCard({ project }: ProjectCardProps) {
               )}
             </h2>
             <div className="max-w-none space-y-2 text-gray-500 dark:text-gray-400">
-              <p>{description || repository?.description}</p>
+              <p>{description}</p>
             </div>
           </div>
           <div>
-            <div className="my-2 flex flex-wrap space-x-1.5">
-              <span className="shrink-0">Built With:</span>
-              {builtWith?.map((tool, index) => {
-                return (
-                  <span key={index} className="font-semibold text-gray-600 dark:text-gray-300">
-                    {tool}
-                    {index !== builtWith.length - 1 && ','}
-                  </span>
-                )
-              })}
-            </div>
+            {builtWith && builtWith.length > 0 && (
+              <div className="my-2 flex flex-wrap space-x-1.5">
+                <span className="shrink-0">Technologies utilisés:</span>
+                {builtWith.map((tool, index) => {
+                  return (
+                    <span key={index} className="font-semibold text-gray-600 dark:text-gray-300">
+                      {tool}
+                      {index !== builtWith.length - 1 && ','}
+                    </span>
+                  )
+                })}
+              </div>
+            )}
 
-            {repository ? (
-              <GithubRepo repo={repository} />
-            ) : (
-              url && (
+            <div className="mt-3 flex flex-col gap-2">
+              {url && (
                 <Link
                   href={url}
                   className="hover:text-primary-600 dark:hover:text-primary-400 text-base font-medium leading-6 text-primary-500"
                   aria-label={`Link to ${title}`}
                 >
-                  <span data-umami-event="project-learn-more">Learn More &rarr;</span>
+                  <span data-umami-event="project-learn-more">En apprendre plus &rarr;</span>
                 </Link>
-              )
-            )}
+              )}
+              {blogPost && (
+                <Link
+                  href={blogPost}
+                  className="hover:text-primary-600 dark:hover:text-primary-400 text-base font-medium leading-6 text-primary-500"
+                  aria-label={`Lisez l'article de blog à propos de ${title}`}
+                >
+                  <span data-umami-event="project-read-blog">Lire l'article du blog &rarr;</span>
+                </Link>
+              )}
+              {project.cta && (
+                <div className="mt-4 flex justify-center">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="default"
+                    className="w-full max-w-xs animate-pulse bg-blue-600 py-3 text-base font-semibold text-white hover:bg-blue-700 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-600"
+                  >
+                    <Link
+                      href="mailto:florian@pasetech.fr"
+                      aria-label={`Contactez à propos de ${title}`}
+                    >
+                      <span data-umami-event="project-cta">Contactez-moi</span>
+                    </Link>
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
