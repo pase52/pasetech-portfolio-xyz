@@ -20,7 +20,7 @@ export default async function NotFound() {
       <main className="mb-auto pt-32">
         <div className="mb-auto flex flex-col content-center space-y-10">
           {/* <div className="flex flex-col items-start justify-start md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 ">
-            <div className="space-x-2 pb-8 pt-6 md:space-y-5">
+            <div className="pt-6 pb-8 space-x-2 md:space-y-5">
               <h1 className="text-6xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:border-r-2 md:px-6 md:text-8xl md:leading-14">
                 404
               </h1>
@@ -36,14 +36,14 @@ export default async function NotFound() {
           </div> */}
 
           <div className="mx-auto mt-5">
-            <SiteLogo kind={'logo'} size={15} logoType="image" parentClassName={'mx-auto'} />
+            <SiteLogo kind={'logo'} size={30} logoType="text" parentClassName={'mx-auto'} />
           </div>
           <Image src={GIF} alt="Page Not Found GIF Wink" className="mx-auto mt-16 "></Image>
           <p className="mx-auto mb-4 text-xl font-bold leading-normal md:text-2xl">
-            Lost your way?
+            Bah alors, on est perdus ?
           </p>
           <Button asChild className={cn(buttonVariants({ variant: 'secondary' }), 'mx-auto')}>
-            <Link href="/">Back to homepage</Link>
+            <Link href="/">Retour vers l'accueil</Link>
           </Button>
         </div>
       </main>
