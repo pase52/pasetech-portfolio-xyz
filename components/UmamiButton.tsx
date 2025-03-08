@@ -18,7 +18,7 @@ const AnalyticsButton = () => {
         target="_blank"
         rel="noopener noreferrer"
         id="analytics-btn"
-        aria-label="Check Site Analytics"
+        aria-label="Consultez les statistiques de mon site"
         className="ml-1 mr-1 inline-block h-8 w-8 rounded p-1"
       >
         <motion.div
