@@ -30,6 +30,20 @@ const SiteLogo = ({
   const pxWidth = size ? size * 4 : 0
   const pxHeight = size ? size * 4 : 0
 
+  // Helper function to determine text size class based on size prop
+  const getTextSizeClass = (size: number) => {
+    if (size <= 8) return 'text-sm'
+    if (size <= 10) return 'text-base'
+    if (size <= 12) return 'text-lg'
+    if (size <= 15) return 'text-xl'
+    if (size <= 20) return 'text-2xl'
+    if (size <= 25) return 'text-3xl'
+    if (size <= 30) return 'text-4xl'
+    if (size <= 40) return 'text-5xl'
+    if (size <= 50) return 'text-6xl'
+    return 'text-7xl'
+  }
+
   const logoMap = {
     logo: '/static/site/logo.png',
     darklogo: '/static/site/logo-d.svg',
@@ -102,10 +116,23 @@ const SiteLogo = ({
   }
 
   if (logoType === 'text') {
-    return (
-      <div className={cn('font-bold', className)}>
+    const textContent = (
+      <div className={cn('font-bold', getTextSizeClass(size), className)}>
         Pase<span className="text-primary"> | </span>Tech
       </div>
+    )
+
+    return href ? (
+      <Link
+        href={href}
+        className={parentClassName}
+        aria-label={siteMetadata.headerTitle}
+        target={target}
+      >
+        {textContent}
+      </Link>
+    ) : (
+      textContent
     )
   }
 }

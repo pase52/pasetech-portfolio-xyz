@@ -59,7 +59,7 @@ export function Header({ session, isCollapsed }: HeaderProps) {
                 strokeLinejoin="round"
               ></path>
             </svg>{' '}
-            <span className="sr-only">Toggle navigation menu</span>
+            <span className="sr-only">Activer le menu de navigation</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="flex flex-col dark:border-gray-700">
