@@ -15,7 +15,7 @@ export default async function Projects() {
     <>
       <SectionContainer>
         <div className="">
-          <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+          <div className="space-y-2 pb-8 pt-6 md:space-y-5">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
               Mes projets
             </h1>
@@ -26,7 +26,7 @@ export default async function Projects() {
           <Separator />
           <div className="py-12">
             <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight">Profesionnels</h3>
-            <div className="grid grid-cols-1 gap-2 -m-4 md:grid-cols-2">
+            <div className="-m-4 grid grid-cols-1 gap-2 md:grid-cols-2">
               {workProjects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
@@ -35,7 +35,7 @@ export default async function Projects() {
           <Separator />
           <div className="py-12 ">
             <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight">Personnels</h3>
-            <div className="grid grid-cols-1 gap-2 -m-4 md:grid-cols-2">
+            <div className="-m-4 grid grid-cols-1 gap-2 md:grid-cols-2">
               {sideProjects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
