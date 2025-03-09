@@ -10,8 +10,8 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 # Enable corepack for yarn/pnpm version management
 RUN corepack enable
 
-# Install Python 3, pkg-config, build tools, pixman, cairo, pango, jpeg, gif, rsvg
-RUN apk add --no-cache python3 pkgconfig build-base pixman-dev cairo-dev pango-dev jpeg-dev giflib-dev librsvg-dev
+# Install Python 3, pkg-config, build tools, pixman, cairo, pango, jpeg, gif, rsvg, openssl
+RUN apk add --no-cache python3 pkgconfig build-base pixman-dev cairo-dev pango-dev jpeg-dev giflib-dev librsvg-dev openssl-dev
 
 # Omit --production flag for TypeScript devDependencies
 RUN \
