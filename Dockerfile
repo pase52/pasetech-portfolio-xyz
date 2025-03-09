@@ -7,6 +7,9 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+# Enable corepack for yarn/pnpm version management
+RUN corepack enable
+
 # Omit --production flag for TypeScript devDependencies
 RUN \
     if [ -f yarn.lock ]; then yarn --frozen-lockfile && npx prisma generate; \
