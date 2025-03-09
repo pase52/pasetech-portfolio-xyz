@@ -23,12 +23,23 @@ services:
     restart: always
     ports:
       - '27017:27017'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     volumes:
       - mongodb_data:/data/db
+      - mongodb_config:/data/configdb
     networks:
       - app-network
     env_file:
       - .env
+    command: ['--replSet', 'rs0', '--bind_ip_all', '--port', '27017']
+    healthcheck:
+      test: echo "try { rs.status() } catch (err) { rs.initiate({_id:'rs0',members:[{_id:0,host:'host.docker.internal:27017'}]}) }" | mongosh --port 27017 --quiet
+      interval: 5s
+      timeout: 30s
+      start_period: 0s
+      start_interval: 1s
+      retries: 30
 
 networks:
   app-network:
@@ -36,3 +47,4 @@ networks:
 
 volumes:
   mongodb_data:
+  mongodb_config:
