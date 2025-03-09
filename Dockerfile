@@ -25,22 +25,15 @@ RUN apk add --no-cache \
     musl-dev \
     g++ \
     make \
-    # Additional dependencies specifically for canvas
     freetype-dev \
     fontconfig-dev \
     libpng-dev
 
-# Environment variables to help with canvas build
-ENV PYTHONUNBUFFERED=1
-ENV npm_config_target_arch=x64
-ENV npm_config_build_from_source=true
-ENV CXXFLAGS=-fPIC
-
 # Omit --production flag for TypeScript devDependencies
 RUN \
-    if [ -f yarn.lock ]; then yarn config set network-timeout 300000 && yarn --frozen-lockfile && npx prisma generate; \
+    if [ -f yarn.lock ]; then yarn --frozen-lockfile && npx prisma generate; \
     elif [ -f package-lock.json ]; then npm ci && npx prisma generate; \
-    elif [ -f pnpm-lock.yaml ]; then pnpm i --network-timeout 300000 && npx prisma generate; \
+    elif [ -f pnpm-lock.yaml ]; then pnpm i && npx prisma generate; \
     # Allow install without lockfile, so example works even without Node.js installed locally
     else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install && npx prisma generate; \
     fi
