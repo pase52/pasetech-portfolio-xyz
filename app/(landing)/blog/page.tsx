@@ -23,12 +23,12 @@ export default function BlogPage() {
 
   return (
     // <SectionContainer size='md'>
-    <div className=" divide-y divide-accent-foreground dark:divide-accent">
+    <div className="divide-y divide-accent-foreground dark:divide-accent">
       <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Posts"
+        title="Le blog !"
       />
     </div>
     // </SectionContainer>

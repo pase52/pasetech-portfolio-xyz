@@ -97,10 +97,10 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">{children}</div>
               <div className="pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(path)} rel="nofollow">
-                  Discuss on Twitter
+                  Partager sur Twitter
                 </Link>
                 {` • `}
-                <Link href={editUrl(filePath)}>View on GitHub</Link>
+                <Link href={editUrl(filePath)}>Voir la source (Github)</Link>
               </div>
               {siteMetadata.comments && (
                 <div
@@ -130,7 +130,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     {prev && prev.path && (
                       <div>
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Previous Article
+                          Dernier post
                         </h2>
                         <div className="hover:text-primary-600 dark:hover:text-primary-400 text-primary-500">
                           <Link href={`/${prev.path}`}>{prev.title}</Link>
@@ -140,7 +140,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     {next && next.path && (
                       <div>
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          Next Article
+                          Prochain post
                         </h2>
                         <div className="hover:text-primary-600 dark:hover:text-primary-400 text-primary-500">
                           <Link href={`/${next.path}`}>{next.title}</Link>
@@ -154,9 +154,9 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                 <Link
                   href={`/${basePath}`}
                   className="hover:text-primary-600 dark:hover:text-primary-400 text-primary-500"
-                  aria-label="Back to the blog"
+                  aria-label="Retourner au sommaire"
                 >
-                  &larr; Back to the blog
+                  &larr; Retourner au sommaire
                 </Link>
               </div>
             </footer>

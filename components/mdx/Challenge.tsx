@@ -47,7 +47,8 @@ const Challenge = ({
 }) => {
   const [userAvatars, setUserAvatars] = useState({})
   const usernameMapping = {
-    'andrew-sameh': 'andrew',
+    // eslint-disable-next-line prettier/prettier
+    'pase52': 'Florian',
   }
   const Fragment = ({ children }) => <>{children}</>
 
@@ -123,14 +124,14 @@ const Challenge = ({
   const titleId = slugify(title, { lower: true })
 
   return (
-    <div className="my-6 overflow-hidden rounded-lg border border-border">
+    <div className="my-6 overflow-hidden border rounded-lg border-border">
       <div className="px-6 py-3">
         <Title level={level} className="!m-0 text-xl" id={titleId}>
           {title}
         </Title>
       </div>
       <div className="flex">
-        <div className="flex flex-col justify-center gap-1 bg-primary px-6 py-4 text-xs">
+        <div className="flex flex-col justify-center gap-1 px-6 py-4 text-xs bg-primary">
           {Array.isArray(solvers) ? (
             renderSolvers(solvers)
           ) : (
@@ -196,7 +197,7 @@ const Challenge = ({
             </span>
           )}
         </div>
-        <div className="flex flex-1 items-center justify-center bg-tertiary/50 p-4 text-center">
+        <div className="flex items-center justify-center flex-1 p-4 text-center bg-tertiary/50">
           <span className="text-[13px]">
             <ReactMarkdown
               components={{ p: Fragment }}

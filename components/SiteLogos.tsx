@@ -90,10 +90,10 @@ const SiteLogo = ({
         <div className="flex items-center justify-between">
           <Image
             src={imagePath}
-            alt={'Andrew Sam'}
+            alt={'Florian DOS SANTOS'}
             width={`${pxWidth}`}
             height={`${pxHeight}`}
-            title={'Andrew Sam'}
+            title={'Florian DOS SANTOS'}
             priority={true} // {false} | {true}
             className={cn('drop-shadow-lg filter', className)}
           />

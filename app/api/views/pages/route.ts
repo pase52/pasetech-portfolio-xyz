@@ -36,7 +36,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         data: {
           slug: post.slug,
           title: post.title,
-          author: post.authors?.[0] ?? 'andrew',
+          author: post.authors?.[0] ?? 'florian',
           type: post.type,
           blogCreatedAt: post.date,
           summary: post.summary,
