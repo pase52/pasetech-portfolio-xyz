@@ -76,10 +76,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       className={`overflow-x-hidden scroll-smooth scrollbar-thin scrollbar-track-slate-400 scrollbar-thumb-slate-700	`}
       suppressHydrationWarning
     >
-      <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
+      {/* <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
-      <link rel="manifest" href="/static/favicons/site.webmanifest" />
+      <link rel="manifest" href="/static/favicons/site.webmanifest" /> */}
+      <meta name="apple-mobile-web-app-title" content="PaseTech" />
       {/* <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" /> */}
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
@@ -97,7 +98,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <VercelAnalytics />
           <JotaiProvider>
             <TooltipProvider delayDuration={500}>
-              <div className="flex h-screen flex-col justify-between font-sans">
+              <div className="flex flex-col justify-between h-screen font-sans">
                 {/* <SearchProvider searchConfig={siteMetadata.search as SearchConfig}> */}
                 {/* <Header session={session} /> */}
                 {/* <main className="pt-20 mb-auto"> */}
